@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Providers;
+use App\Larademo\Larademo;
+
+use Illuminate\Support\ServiceProvider;
+
+class LarademoServiceprovider extends ServiceProvider
+{
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+        $this->app->bind('larademo',function(){
+            return new Larademo();
+        });
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+}
